@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:600,700|Source+Sans+Pro:400,700&subset=cyrillic');
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Overpass', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  .container {
+    width: 90%;
+    max-width: 1170px;
+    margin: auto;
+  }
+}
+h2{
+  font: 600 42px "Overpass", sans-serif;
+}
+h3{
+  font: 600 26px "Overpass", sans-serif;
+}
+img{
+    user-select: none;
+}
+a{
+    text-decoration: none;
+}
+button, input, select{
+    &:focus{
+        outline: none;
+    }
+}
+button{
+    cursor: pointer;
+}
+.px-0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.m-auto{
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+.text-center{
+    text-align: center;
+}
+.d-flex{
+    display: flex;
+}
+.items-center{
+    align-items: center;
+}
+.content-center{
+    justify-content: center;
+}
+.content-between{
+    justify-content: space-between;
+}

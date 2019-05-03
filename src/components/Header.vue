@@ -100,7 +100,7 @@ export default {
     display: none;
     width: 23px;
     height: 22px;
-    background: url("../assets/img/icons/line-menu.svg");
+    background: url("~@/assets/img/icons/line-menu.svg");
     cursor: pointer;
   }
 

@@ -156,20 +156,20 @@ export default {
   }
 
   .f {
-    background: url('../assets/img/icons/facebook.svg') no-repeat;
+    background: url('~@/assets/img/icons/facebook.svg') no-repeat;
   }
 
   .l {
-    background: url('../assets/img/icons/linkedin.svg') no-repeat;
+    background: url('~@/assets/img/icons/linkedin.svg') no-repeat;
   }
 
   .i {
-    background: url('../assets/img/icons/instagram.svg') no-repeat;
+    background: url('~@/assets/img/icons/instagram.svg') no-repeat;
   }
   .t {
-    background: url('../assets/img/icons/twitter.svg') no-repeat;
+    background: url('~@/assets/img/icons/twitter.svg') no-repeat;
   }
   .p {
-    background: url('../assets/img/icons/pinterest.svg') no-repeat;
+    background: url('~@/assets/img/icons/pinterest.svg') no-repeat;
   }
 </style>

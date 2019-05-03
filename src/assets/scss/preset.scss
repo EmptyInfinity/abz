@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   .container {
     width: 90%;
@@ -13,48 +14,70 @@ body {
     margin: auto;
   }
 }
-h2{
+
+h2 {
   font: 600 42px "Overpass", sans-serif;
 }
-h3{
+
+h3 {
   font: 600 26px "Overpass", sans-serif;
 }
-img{
-    user-select: none;
+
+img {
+  user-select: none;
 }
-a{
-    text-decoration: none;
+
+a {
+  text-decoration: none;
+  user-select: none;
 }
-button, input, select{
-    &:focus{
-        outline: none;
-    }
+
+button, input, select {
+  &:focus {
+    outline: none;
+  }
 }
-button{
-    cursor: pointer;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  background-color: #fff !important;
 }
-.px-0{
-    padding-left: 0;
-    padding-right: 0;
+
+button {
+  cursor: pointer;
 }
-.m-auto{
-    margin: auto;
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
 }
-ul{
-    list-style: none;
+
+.m-auto {
+  margin: auto;
 }
-.text-center{
-    text-align: center;
+
+ul {
+  list-style: none;
 }
-.d-flex{
-    display: flex;
+
+.text-center {
+  text-align: center;
 }
-.items-center{
-    align-items: center;
+
+.d-flex {
+  display: flex;
 }
-.content-center{
-    justify-content: center;
+
+.items-center {
+  align-items: center;
 }
-.content-between{
-    justify-content: space-between;
+
+.content-center {
+  justify-content: center;
+}
+
+.content-between {
+  justify-content: space-between;
 }

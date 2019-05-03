@@ -79,7 +79,7 @@
              :class="{open: isSelectOpen}">
           <p class="warn" v-if="errPosition">Choose your position!</p>
           <span>{{ position || 'Choose your position' }}</span>
-          <img src="../assets/img/icons/caret-down.svg" alt>
+          <img src="@/assets/img/icons/caret-down.svg" alt>
           <div class="options" @click.stop="setPosition($event)">
             <p v-for="(position,i) in positions" :key="i" :data-id="i+1">
               {{ position.name }}

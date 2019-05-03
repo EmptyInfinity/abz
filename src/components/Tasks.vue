@@ -22,7 +22,7 @@
             Are you shipping too much JavaScript? Too many images? Images and JavaScript are the most significant contributors to the page weight that affect page load time based on data from HTTP Archive and the Chrome User Experience Report - our public dataset for key UX metrics as experienced by Chrome users under real-world conditions.
           </p>
         </div>
-        <img src="../assets/img/imgs/man-laptop-v1.svg" alt="">
+        <img src="@/assets/img/imgs/man-laptop-v1.svg" alt="">
       </div>
     </div>
   </div>

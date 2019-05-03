@@ -4,7 +4,7 @@
       <router-link
         class="logo-wrap"
         to="/">
-        <img src="../assets/img/logo.svg" alt="abz agency" height="24px">
+        <img src="@/assets/img/logo.svg" alt="abz agency" height="24px">
       </router-link>
       <ul>
         <li>
@@ -31,7 +31,7 @@
           <p>{{user.email}}</p>
         </div>
         <img :src=user.photo alt class="avatar">
-        <img src="../assets/img/icons/sign-out.svg" alt>
+        <img src="@/assets/img/icons/sign-out.svg" alt>
       </div>
       <div v-if="isMenuOpen"
            class="menu"

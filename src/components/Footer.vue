@@ -2,7 +2,7 @@
   <footer>
     <div class="container">
       <nav>
-        <img src="../assets/img/logo-w.svg" width="131px" alt="">
+        <img src="@/assets/img/logo-w.svg" width="131px" alt="">
         <ul>
           <li>
             <a href="#">About me</a>
@@ -24,15 +24,15 @@
       <div class="ceo">
         <div>
           <p>
-            <img src="../assets/img/icons/mail.svg" alt="">
+            <img src="@/assets/img/icons/mail.svg" alt="">
             work.of.future@gmail.com
           </p>
           <p>
-            <img src="../assets/img/icons/phone.svg" alt="">
+            <img src="@/assets/img/icons/phone.svg" alt="">
             +38 (050) 789 24 98
           </p>
           <p>
-            <img src="../assets/img/icons/cellphone.svg" alt="">
+            <img src="@/assets/img/icons/cellphone.svg" alt="">
             +38 (050) 543 14 98
           </p>
         </div>

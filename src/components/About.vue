@@ -6,7 +6,7 @@
         class="mobile"
         data-aos-duration="1000">Let's get ac quainted</h2>
       <div>
-        <img src="../assets/img/imgs/man-mobile.svg" alt=""
+        <img src="@/assets/img/imgs/man-mobile.svg" alt=""
              id="aboutMe"
              data-aos="fade-right"
              data-aos-offset="250"
@@ -47,7 +47,7 @@
          data-aos-offset="50"
          data-aos-duration="1000">
       <div class="block">
-        <img src="../assets/img/imgs/html.svg" alt>
+        <img src="@/assets/img/imgs/html.svg" alt>
         <div>
           <h3>I'm in love with HTML</h3>
           <p>Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="block">
-        <img src="../assets/img/imgs/css.svg" alt>
+        <img src="@/assets/img/imgs/css.svg" alt>
         <div>
           <h3>CSS is my best friend</h3>
           <p>
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="block">
-        <img src="../assets/img/imgs/javascript.svg" alt>
+        <img src="@/assets/img/imgs/javascript.svg" alt>
         <div>
           <h3>JavaScript is my passion</h3>
           <p>JavaScript is a high-level, interpreted programming language. It is a language which is also characterized

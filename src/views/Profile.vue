@@ -1,12 +1,12 @@
 <template>
   <div class="profile" data-aos="fade"
        data-aos-duration="1000">
-    <img src="../assets/img/icons/next.svg" alt=""
+    <img src="@/assets/img/icons/next.svg" alt=""
          @click="prevUser()"
          v-if="isPrev"
          class="prev"
     >
-    <img src="../assets/img/icons/next.svg" alt=""
+    <img src="@/assets/img/icons/next.svg" alt=""
          @click="lastUser()"
          v-else
          class="prev"
@@ -26,12 +26,12 @@
 
       </div>
     </div>
-    <img src="../assets/img/icons/next.svg" alt=""
+    <img src="@/assets/img/icons/next.svg" alt=""
          @click="nextUser()"
          class="next"
          v-if="isNext"
     >
-    <img src="../assets/img/icons/next.svg" alt=""
+    <img src="@/assets/img/icons/next.svg" alt=""
          @click="firstUser()"
          class="next"
          v-else

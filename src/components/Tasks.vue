@@ -39,7 +39,7 @@ export default {
 
 <style scoped lang="scss">
 .container-wrap {
-  background-image: url("~@/assets/img/imgs/bg-2.jpg");
+  background-image: url("~@/assets/img/imgs/bg-2-min.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;

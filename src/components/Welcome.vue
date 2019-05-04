@@ -40,11 +40,12 @@ export default {
 
 <style scoped lang="scss">
 .container-wrap {
-  background-image: url("~@/assets/img/imgs/bg-1.jpg");
-  background-size: cover;
+  background-image: url("~@/assets/img/imgs/bg-1-min.jpg");
+  background-position: center -230px;
+  background-size: 130%;
   background-repeat: no-repeat;
   color: #fff;
-  padding: 135px 0 140px 0;
+  padding: 200px 0 140px 0;
 }
 h1 {
   font: 600 50px "Overpass", sans-serif;

@@ -269,14 +269,9 @@ export default {
   }
 
   h4 {
-    font: 400 18px "Source Sans Pro", sans-serif;
+    font: 400 1.125em "Source Sans Pro", sans-serif;
     text-align: center;
     padding-bottom: 70px;
-  }
-
-  p {
-    font: 400 14px "Source Sans Pro", sans-serif;
-    color: #4d4d4d;
   }
 
   .users {
@@ -296,7 +291,7 @@ export default {
   }
 
   button {
-    font: 700 20px "Source Sans Pro", sans-serif;
+    font: 700 1.25em "Source Sans Pro", sans-serif;
     min-width: 290px;
     margin: 0 auto;
     display: block;
@@ -313,7 +308,7 @@ export default {
       position: absolute;
       top: -35px;
       left: 0;
-      font: 400 14px "Source Sans Pro", sans-serif;
+      font: 400 .875em "Source Sans Pro", sans-serif;
       background: #d36c198b;
       padding: 5px 10px;
       border-radius: 4px;
@@ -338,7 +333,7 @@ export default {
       top: -35px;
       left: 0;
       display: flex;
-      font: 400 14px "Source Sans Pro", sans-serif;
+      font: 400 .875em "Source Sans Pro", sans-serif;
 
       .warn {
         position: static;
@@ -350,7 +345,7 @@ export default {
       background: #d6d6d6;
       border: none;
       color: #8b8b8b;
-      font: 700 20px "Source Sans Pro", sans-serif;
+      font: 700 1.25em "Source Sans Pro", sans-serif;
       min-width: 290px;
       margin: 0 auto;
       display: block;
@@ -383,7 +378,7 @@ export default {
         top: 0;
         transform: translateY(-50%);
         left: 14px;
-        font: 400 12px "Source Sans Pro", sans-serif;
+        font: 400 .75em "Source Sans Pro", sans-serif;
         padding: 0 5px;
         color: #b5b5b5;
         background: #fff;
@@ -394,7 +389,7 @@ export default {
         height: 53px;
         border-radius: 4px;
         width: 100%;
-        font: 400 16px "Source Sans Pro", sans-serif;
+        font: 400 1em "Source Sans Pro", sans-serif;
         padding: 0 17px;
 
         &::placeholder {
@@ -445,7 +440,7 @@ export default {
         justify-content: space-between;
         border: 1px solid #b5b5b5;
         border-radius: 4px;
-        font: 400 16px "Source Sans Pro", sans-serif;
+        font: 400 1em "Source Sans Pro", sans-serif;
         position: relative;
         width: 48.5%;
         height: 55px;
@@ -464,11 +459,12 @@ export default {
           border: 1px solid #b5b5b5;
           border-radius: 4px;
           user-select: none;
+          z-index: 3;
 
           p {
             padding: 5px 10px;
             cursor: pointer;
-            font: 400 16px "Source Sans Pro", sans-serif;
+            font: 400 1em "Source Sans Pro", sans-serif;
             color: #000;
 
             &:hover {
@@ -492,10 +488,10 @@ export default {
 
     .desc {
       position: absolute;
-      bottom: -20px;
+      top: calc(100% + 3px);
       left: 18px;
       user-select: none;
-      font: 400 14px "Source Sans Pro", sans-serif;
+      font: 400 .75em "Source Sans Pro", sans-serif;
       color: #b5b5b5;
     }
 
@@ -515,7 +511,7 @@ export default {
     }
 
     .file input {
-      min-width: 14rem;
+      min-width: 14em;
       margin: 0;
       filter: alpha(opacity=1);
       opacity: 0;
@@ -544,13 +540,13 @@ export default {
       transform: translate(0, -50%);
       z-index: 2;
       padding: 0;
-      font: 400 16px "Source Sans Pro", sans-serif;
+      font: 400 1em "Source Sans Pro", sans-serif;
       color: #b5b5b5;
     }
 
     .file-custom:before {
       position: absolute;
-      font: 700 20px "Source Sans Pro", sans-serif;
+      font: 700 1.5em "Source Sans Pro", sans-serif;
       z-index: 1;
       border: 2px solid #d36c19;
       color: #d36c19;

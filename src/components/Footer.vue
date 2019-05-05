@@ -76,6 +76,7 @@
     </div>
   </footer>
 </template>
+
 <script>
 export default {
   name: 'footer-component'
@@ -86,7 +87,7 @@ export default {
   footer {
     background: #30388f;
     color: #fff;
-    font: 400 16px "Source Sans Pro", sans-serif;
+    font: 400 1em "Source Sans Pro", sans-serif;
 
     a {
       color: #fff;
@@ -111,7 +112,7 @@ export default {
     .ceo {
       display: flex;
       justify-content: space-between;
-      font-size: 20px;
+      font-size: 1.25em;
     }
 
     .links {
@@ -137,7 +138,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     span{
-      font-size: 14px;
+      font-size: .75em;
     }
   }
 

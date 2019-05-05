@@ -114,7 +114,6 @@ export default {
     ul {
       padding: 30px;
       border-top: 1px solid #f8f8f8;
-      font-size: 18px;
     }
 
     li:not(:first-child) {
@@ -126,19 +125,19 @@ export default {
       text-align: left;
 
       p {
-        font-size: 20px;
         width: 250px;
         padding-top: 5px;
+        font-size: 1.3em;
 
         &:last-child {
-          font-size: 16px;
+          font-size: .9em;
         }
       }
     }
 
     .avatar {
       margin: 0;
-      width: 80px;
+      width: 70px;
     }
   }
 
@@ -158,22 +157,23 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font: 400 16px "Source Sans Pro", sans-serif;
+    font: 400 1em "Source Sans Pro", sans-serif;
     padding: 12px 0;
 
     .user-main {
       display: flex;
       align-items: center;
       text-align: right;
-      font-size: 14px;
 
       p {
+        font-size: .875em;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         width: 200px;
 
         &:last-child {
+          font-size: .75em;
           color: #8b8b8b;
         }
       }

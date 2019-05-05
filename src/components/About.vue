@@ -1,10 +1,10 @@
 <template>
   <div class="container about">
+    <h2
+      data-aos="fade-up"
+      class="tablet"
+      data-aos-duration="1000">Let's get ac quainted</h2>
     <div class="text">
-      <h2
-        data-aos="fade-up"
-        class="mobile"
-        data-aos-duration="1000">Let's get ac quainted</h2>
       <div>
         <img src="@/assets/img/imgs/man-mobile.svg" alt=""
              id="aboutMe"
@@ -15,7 +15,7 @@
       <div>
         <h2
           data-aos="fade-up"
-          class="tablet"
+          class="desktop"
           data-aos-duration="1000">Let's get ac quainted</h2>
         <h3 data-aos="fade-left"
             data-aos-duration="1000">I am cool frontend developer</h3>
@@ -42,7 +42,7 @@
     <h2 class="text-center m-auto" id="relationships"
         data-aos="fade-up"
         data-aos-duration="1000"
-        data-aos-offset="100">About my relationships with web development</h2>
+        data-aos-offset="100">About my relationships with web-development</h2>
     <div class="blocks" data-aos="fade-up"
          data-aos-offset="50"
          data-aos-duration="1000">
@@ -123,12 +123,12 @@ export default {
 
   p {
     padding: 13px 0 13px 15px;
-    font: 400 16px "Source Sans Pro", sans-serif;
+    font: 400 1em "Source Sans Pro", sans-serif;
     color: #4d4d4d;
   }
 
   button {
-    font: 700 22px "Source Sans Pro", sans-serif;
+    font: 700 1.375em "Source Sans Pro", sans-serif;
     border: none;
     color: #d36c19;
     background: #fff;
@@ -138,9 +138,9 @@ export default {
   .blocks {
     display: flex;
 
-    div {
+    .block {
       flex: 1;
-      margin-right: 70px;
+      margin-right: 80px;
 
       &:last-child {
         margin-right: 0;

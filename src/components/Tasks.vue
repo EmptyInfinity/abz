@@ -61,15 +61,6 @@ h2 {
 p {
   max-width: 555px;
   padding-top: 25px;
-  font: 400 16px "Source Sans Pro", sans-serif;
-}
-button {
-  font: 700 20px "Source Sans Pro", sans-serif;
-  height: 40px;
-  min-width: 290px;
-  border-radius: 4px;
-  background: #d36c19;
-  border: none;
-  color: #fff;
+  font: 400 1em "Source Sans Pro", sans-serif;
 }
 </style>

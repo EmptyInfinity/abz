@@ -18,27 +18,27 @@
 </template>
 
 <script>
-  export default {
-    name: 'User',
-    props: {
-      id: Number,
-      name: String,
-      position: String,
-      email: String,
-      phone: String,
-      photo: String
-    },
-    data() {
-      return {
-        photoSrc: this.photo
-      }
-    },
-    methods: {
-      replaceImg() {
-        this.photoSrc = 'https://cdns.iconmonstr.com/wp-content/assets/preview/2018/240/iconmonstr-user-circle-thin.png'
-      }
+export default {
+  name: 'User',
+  props: {
+    id: Number,
+    name: String,
+    position: String,
+    email: String,
+    phone: String,
+    photo: String
+  },
+  data () {
+    return {
+      photoSrc: this.photo
+    }
+  },
+  methods: {
+    replaceImg () {
+      this.photoSrc = 'https://cdns.iconmonstr.com/wp-content/assets/preview/2018/240/iconmonstr-user-circle-thin.png'
     }
   }
+}
 </script>
 
 <style lang="scss">

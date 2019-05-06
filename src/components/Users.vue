@@ -243,6 +243,7 @@ export default {
       document.addEventListener('click', e => e.target !== select ? this.isSelectOpen = false : false)
     await this.$store.dispatch('getToken')
     await this.$store.dispatch('getPages')
+    await this.$store.dispatch('getUsers')
     if (this.$store.state.users.length === 0) {
       await this.$store.dispatch('getUsers')
         .then(() => this.getUsers())

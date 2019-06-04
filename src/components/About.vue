@@ -18,14 +18,17 @@
           class="desktop"
           data-aos-duration="1000">Let's get ac quainted</h2>
         <h3 data-aos="fade-left"
+            data-class="rightLeft-to-upDown"
             data-aos-duration="1000">I am cool frontend developer</h3>
         <p data-aos="fade-left"
+           data-class="rightLeft-to-upDown"
            data-aos-duration="1000">When real users have a slow experience on mobile, they're much less likely to find
           what they are looking for or
           purchase from you in the future. For many sites this equates to a huge missed opportunity, especially when
           more
           than half of visits are abandoned if a mobile page takes over 3 seconds to load.</p>
         <div data-aos="fade-left"
+             data-class="rightLeft-to-upDown"
              data-aos-duration="1000">
           <p>Last week, Google Search and Ads teams announced two new speed initiatives to help improve user-experience
             on
@@ -43,10 +46,12 @@
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-offset="100">About my relationships with web-development</h2>
-    <div class="blocks" data-aos="fade-up"
-         data-aos-offset="50"
-         data-aos-duration="1000">
-      <div class="block">
+    <div class="blocks" >
+      <div class="block"
+           data-aos="fade-up"
+           data-aos-offset="50"
+           data-aos-delay="100"
+           data-aos-duration="1000">
         <img src="@/assets/img/imgs/html.svg" alt>
         <div>
           <h3>I'm in love with HTML</h3>
@@ -54,7 +59,11 @@
             applications.</p>
         </div>
       </div>
-      <div class="block">
+      <div class="block"
+           data-aos="fade-up"
+           data-aos-offset="50"
+           data-aos-delay="300"
+           data-aos-duration="1000">
         <img src="@/assets/img/imgs/css.svg" alt>
         <div>
           <h3>CSS is my best friend</h3>
@@ -65,7 +74,11 @@
           </p>
         </div>
       </div>
-      <div class="block">
+      <div class="block"
+           data-aos="fade-up"
+           data-aos-offset="50"
+           data-aos-delay="500"
+           data-aos-duration="1000">
         <img src="@/assets/img/imgs/javascript.svg" alt>
         <div>
           <h3>JavaScript is my passion</h3>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container container-users">
     <div
       id="users"
       data-aos="fade-up"
@@ -39,7 +39,7 @@
     </div>
     <form action="post" @submit.prevent="submit"
           data-aos="fade-in"
-          data-aos-duration="1300"
+          data-aos-duration="1500"
           data-aos-offset="150">
       <div class="inputs">
         <label for="name">
@@ -139,6 +139,7 @@ export default {
       isModalOpen: false,
       isSelectOpen: false,
       isMoreUsers: true,
+      isLoading: false,
       users: [],
       positions: [],
       position: '',
@@ -243,7 +244,6 @@ export default {
       document.addEventListener('click', e => e.target !== select ? this.isSelectOpen = false : false)
     await this.$store.dispatch('getToken')
     await this.$store.dispatch('getPages')
-    await this.$store.dispatch('getUsers')
     if (this.$store.state.users.length === 0) {
       await this.$store.dispatch('getUsers')
         .then(() => this.getUsers())

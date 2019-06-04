@@ -1,6 +1,7 @@
 <template>
-  <div class="container-wrap welcome">
-    <div class="container" data-aos="fade-left"
+  <div class="container-wrap welcome" id="welcome">
+    <div class="container"
+         data-aos="fade-right"
          data-aos-easing="ease-in-out"
          data-aos-offset="100"
          data-aos-duration="600">

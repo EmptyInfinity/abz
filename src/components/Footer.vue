@@ -5,19 +5,19 @@
         <img src="@/assets/img/logo-w.svg" width="131px" alt="">
         <ul>
           <li>
-            <a href="#">About me</a>
+            <router-link to="/#aboutMe" @click.native="scrollToEl('aboutMe')">About me</router-link>
           </li>
           <li>
-            <a href="#">Relationships</a>
+            <router-link to="/#relationships" @click.native="scrollToEl('relationships')">Relationships</router-link>
           </li>
           <li>
-            <a href="#">Requirments</a>
+            <router-link to="/#requirements" @click.native="scrollToEl('requirements')">Requirements</router-link>
           </li>
           <li>
-            <a href="#">Users</a>
+            <router-link to="/#users" @click.native="scrollToEl('users')">Users</router-link>
           </li>
           <li>
-            <a href="#">Sign Up</a>
+            <router-link to="/#signUp" @click.native="scrollToEl('signUp')">Sign Up</router-link>
           </li>
         </ul>
       </nav>
@@ -38,28 +38,28 @@
         </div>
         <div class="links">
           <div>
-            <router-link to="/news">News</router-link>
-            <a href="">Blogs</a>
-            <a href="">Partners</a>
-            <a href="">Shop</a>
+            <a href="#">News</a>
+            <a href="#">Blogs</a>
+            <a href="#">Partners</a>
+            <a href="#">Shop</a>
           </div>
           <div>
-            <a href="">Overview</a>
-            <a href="">Design</a>
-            <a href="">Code</a>
-            <a href="">Collaborate</a>
+            <a href="#">Overview</a>
+            <a href="#">Design</a>
+            <a href="#">Code</a>
+            <a href="#">Collaborate</a>
           </div>
           <div>
-            <a href="">Tutorial</a>
-            <a href="">Resources</a>
-            <a href="">Guides</a>
-            <a href="">Examples</a>
+            <a href="#">Tutorial</a>
+            <a href="#">Resources</a>
+            <a href="#">Guides</a>
+            <a href="#">Examples</a>
           </div>
           <div>
-            <a href="">FAQ</a>
-            <a href="">Terms</a>
-            <a href="">Conditions</a>
-            <a href="">Help</a>
+            <a href="#">FAQ</a>
+            <a href="#">Terms</a>
+            <a href="#">Conditions</a>
+            <a href="#">Help</a>
           </div>
         </div>
       </div>
@@ -79,7 +79,16 @@
 
 <script>
 export default {
-  name: 'footer-component'
+  name: 'footer-component',
+  methods:{
+    scrollToEl (e) {
+      let to = document.getElementById(e).offsetTop - 100
+      window.scrollTo({
+        top: to,
+        behavior: 'smooth'
+      })
+    }
+  }
 }
 </script>
 

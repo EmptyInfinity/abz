@@ -1,41 +1,48 @@
 <template>
-  <div class="profile" data-aos="fade"
-       data-aos-duration="1000">
-    <img src="@/assets/img/icons/next.svg" alt=""
-         @click="prevUser()"
-         v-if="isPrev"
-         class="prev"
-    >
-    <img src="@/assets/img/icons/next.svg" alt=""
-         @click="lastUser()"
-         v-else
-         class="prev"
-    >
-    <div class="user">
-      <div class="photo-wrap">
-        <img :src="userData.photo"
-             :alt="userData.name"
-             @error="replaceImg">
-      </div>
-      <div class="text">
-        <p>{{userData.name}}</p>
-        <p>{{ userData.position }}</p>
-        <p>{{ userData.email}}</p>
-        <p>{{ userData.phone }}</p>
-        <span>{{date}}</span>
-
+  <div :class="{loading: preloader}">
+    <div :class="{ dissapear: !preloader}" class="preloader">
+    </div>
+    <div class="profile-wrap">
+      <div class="profile"
+           data-aos="fade"
+           data-aos-duration="1000">
+        <img src="@/assets/img/icons/next.svg" alt="3"
+             @click="prevUser()"
+             v-if="isPrev"
+             class="prev"
+        >
+        <img src="@/assets/img/icons/next.svg" alt="4"
+             @click="lastUser()"
+             v-else
+             class="prev"
+        >
+        <div class="user" :class="{userLoad: userLoading}" @animationend="userLoading = false">
+          <div class="photo-wrap">
+            <img
+              :src="userData.photo"
+              :alt="userData.name"
+              @error="replaceImg">
+          </div>
+          <div class="text">
+            <p>{{userData.name}}</p>
+            <p>{{ userData.position }}</p>
+            <p>{{ userData.email}}</p>
+            <p>{{ userData.phone }}</p>
+            <span>{{date}}</span>
+          </div>
+        </div>
+        <img src="@/assets/img/icons/next.svg" alt="1"
+             @click="nextUser()"
+             class="next"
+             v-if="isNext"
+        >
+        <img src="@/assets/img/icons/next.svg" alt="2"
+             @click="firstUser()"
+             class="next"
+             v-else
+        >
       </div>
     </div>
-    <img src="@/assets/img/icons/next.svg" alt=""
-         @click="nextUser()"
-         class="next"
-         v-if="isNext"
-    >
-    <img src="@/assets/img/icons/next.svg" alt=""
-         @click="firstUser()"
-         class="next"
-         v-else
-    >
   </div>
 </template>
 
@@ -46,70 +53,85 @@ export default {
   name: 'Profile',
   data () {
     return {
-      userData: {},
+      userData: [],
       date: '',
       isNext: true,
-      isPrev: true
+      isPrev: true,
+      userLoading: false,
+      preloader: false
     }
   },
   async mounted () {
     if (this.user(this.$route.params.id)) {
       this.userData = this.user(this.$route.params.id)
+      this.getDate()
     } else {
+      this.preloader = true
       await this.$store.dispatch('getUsers') // eslint-disable-next-line
-        .then(() => this.userData = this.user(this.$route.params.id))
+          .then(() => {
+          this.preloader = false
+          this.userData = this.user(this.$route.params.id)
+        })
         .then(() => {
-          let ms = this.user(this.$route.params.id).registration_timestamp
-          let now = new Date().getTime()
-          let d1 = new Date(now - ms)
-          let d = d1.getDate()
-          let m = d1.getMonth()
-          let y = d1.getFullYear()
-
-          this.date = `${y} : ${m}   : ${d}`
-          this.date = this.date.replace(/\b(\d{1})\b/g, '0$1')
+          this.getDate()
         })
     }
   },
   computed: {
     ...mapGetters({
       user: 'userNumber'
-    })
+    }),
   },
   methods: {
+    checkUserOrder(){
+      this.isNext = this.$store.state.users.length - this.$route.params.id !== 1;
+      if (this.$route.params.id === 0) {
+        this.isPrev = false
+      }
+    },
+    getDate(){
+      let ms = this.user(this.$route.params.id).registration_timestamp
+      let date = new Date(ms*1000);
+      let d = date.getDate()
+      let m = date.getMonth()+1
+      let y = date.getFullYear()
+      this.date = `${d} : ${m}  : ${y}`
+      this.date = this.date.replace(/\b(\d{1})\b/g, '0$1')
+    },
     firstUser () {
+      this.userLoading = true
       this.userData = this.user(0)
       this.$route.params.id = 0
-      this.isNext = true
+      this.getDate()
+      this.checkUserOrder()
     },
     lastUser () {
+      this.userLoading = true
       this.userData = this.user(this.$store.state.users.length - 1)
+      this.getDate()
       this.$route.params.id = this.$store.state.users.length - 1
       this.isPrev = true
+      this.checkUserOrder()
     },
     async nextUser () {
+      this.userLoading = true
       this.$nextTick()
         .then(() => this.user(++this.$route.params.id))
         .then((user) => {
           this.userData = user
+          this.getDate()
         })
-        .then(() => {
-          if (this.$store.state.users.length - this.$route.params.id === 1) {
-            this.isNext = false
-          }
-        })
+        .then(() => this.checkUserOrder())
     },
     async prevUser () {
+      this.userLoading = true
       this.$nextTick()
         .then(() => this.user(--this.$route.params.id))
         .then((user) => {
           this.userData = user
+          this.getDate()
         })
-        .then(() => { // eslint-disable-next-line
-          if (this.$route.params.id == 0) {
-            this.isPrev = false
-          }
-        })
+        .then(() => this.checkUserOrder())
     },
     replaceImg () {
       this.userData.photo = 'https://cdns.iconmonstr.com/wp-content/assets/preview/2018/240/iconmonstr-user-circle-thin.png'
@@ -119,11 +141,57 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @keyframes dissapear {
+    0% {
+      background-image: url("~@/assets/img/imgs/preload.gif");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #fff;
+      z-index: 1;
+    }
+    100% {
+      z-index: 1;
+      background-image: url("~@/assets/img/imgs/preload.gif");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #fff;
+      opacity: 0;
+    }
+  }
+  .preloader{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    animation: dissapear 3s ease;
+  }
+
+  .profile-wrap {
+    min-height: 100vh;
+    padding-top: 52px;
+
+  }
+
+  .loading {
+    background-image: url("~@/assets/img/imgs/preload.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .profile {
+      display: none;
+    }
+  }
+
   .profile {
     display: flex;
     justify-content: space-between;
-    width: 600px;
-    margin: 84px auto 20px auto;
+    max-width: 600px;
+    margin: auto;
+    padding-top: 100px;
   }
 
   .next, .prev {
@@ -143,7 +211,26 @@ export default {
 
   .user {
     flex-direction: column;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
+    transition: 1s;
+
+    &.userLoad {
+      animation: flash .5s;
+      @keyframes flash {
+        0% {
+          transform: rotateX(180deg);
+        }
+        50% {
+          opacity: 0.9;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
 
     div {
       display: flex;

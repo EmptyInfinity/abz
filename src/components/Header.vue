@@ -3,7 +3,8 @@
     <nav class="container">
       <router-link
         class="logo-wrap"
-        to="/">
+        to="/#welcome"
+        @click.native="scrollToEl('welcome')">
         <img src="@/assets/img/logo.svg" alt="abz agency" height="24px">
       </router-link>
       <ul>
